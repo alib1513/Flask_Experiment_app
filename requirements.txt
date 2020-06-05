@@ -1,0 +1,7 @@
+Flask_Login==0.5.0
+Flask==1.1.2
+WTForms==2.3.1
+Flask_Mail==0.9.1
+Flask_WTF==0.14.3
+Flask_Bcrypt==0.7.1
+pandas==1.0.4
