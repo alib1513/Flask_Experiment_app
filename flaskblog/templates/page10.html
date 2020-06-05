@@ -1,0 +1,402 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Questionnaire</h2>
+      
+    <article class="media content-section">
+        <div class="media-body">
+            <h2>Questions 5-10</h2>
+
+            
+            <form name="myForm"action="{{url_for('page10')}}" method="POST" >
+                <p class="article-content">6. I respect people who are modest about themselves.                </p>
+                
+            <div class="btn-group-vertical btn-group-toggle btn-block form-group" data-toggle="buttons">
+                {% if data[0]==1%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option1" value = "1"  autocomplete="off" checked> Strongly Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option1" value = "1"  autocomplete="off" > Strongly Disagree
+                    </label>
+                    {% endif %}
+                    {% if data[0]==2%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option2" value = "2"  autocomplete="off" checked> Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option2" value = "2"  autocomplete="off" > Disagree
+                    </label>
+                    {% endif %}
+                    {% if data[0]==3%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option3" value = "3"  autocomplete="off" checked> Somewhat Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option3" value = "3"  autocomplete="off" > Somewhat Disagree
+                    </label>
+                    {% endif %}
+
+                    {% if data[0]==4%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option4" value = "4"  autocomplete="off" checked> Don’t agree or disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option4" value = "4"  autocomplete="off" >Don’t agree or disagree
+                    </label>
+                    {% endif %}
+
+                    {% if data[0]==5%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option5" value = "5"  autocomplete="off" checked>Agree Somewhat
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option5" value = "5"  autocomplete="off" > Agree Somewhat
+                    </label>
+                    {% endif %}
+
+                    {% if data[0]==6%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option6" value = "6"  autocomplete="off" checked> Agree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option6" value = "6"  autocomplete="off" > Agree
+                    </label>
+                    {% endif %}
+
+                    {% if data[0]==7%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options1" id="option7" value = "7"  autocomplete="off" checked> Strongly Agree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options1" id="option7" value = "7"  autocomplete="off" > Strongly Agree
+                    </label>
+                    {% endif %}
+            </div>
+              <p class="article-content">7. I feel it is important for me to act as an independent person.            </p>
+            <div class="btn-group-vertical btn-group-toggle btn-block form-group" data-toggle="buttons">
+                {% if data[1]==1%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option1" value = "1"  autocomplete="off" checked> Strongly Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option1" value = "1"  autocomplete="off" > Strongly Disagree
+                    </label>
+                    {% endif %}
+                    {% if data[1]==2%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option2" value = "2"  autocomplete="off" checked> Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option2" value = "2"  autocomplete="off" > Disagree
+                    </label>
+                    {% endif %}
+                    {% if data[1]==3%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option3" value = "3"  autocomplete="off" checked> Somewhat Disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option3" value = "3"  autocomplete="off" > Somewhat Disagree
+                    </label>
+                    {% endif %}
+
+                    {% if data[1]==4%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option4" value = "4"  autocomplete="off" checked> Don’t agree or disagree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option4" value = "4"  autocomplete="off" >Don’t agree or disagree
+                    </label>
+                    {% endif %}
+
+                    {% if data[1]==5%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option5" value = "5"  autocomplete="off" checked>Agree Somewhat
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option5" value = "5"  autocomplete="off" > Agree Somewhat
+                    </label>
+                    {% endif %}
+
+                    {% if data[1]==6%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option6" value = "6"  autocomplete="off" checked> Agree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option6" value = "6"  autocomplete="off" > Agree
+                    </label>
+                    {% endif %}
+
+                    {% if data[1]==7%}
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options2" id="option7" value = "7"  autocomplete="off" checked> Strongly Agree
+                    </label>
+                    {% else: %}
+                    <label class="btn btn-secondary ">
+                        <input type="radio" name="options2" id="option7" value = "7"  autocomplete="off" > Strongly Agree
+                    </label>
+                    {% endif %}
+            </div>
+    <p class="article-content">8. I will sacrifice my self interest for the benefit of the group I am in.    </p>
+    <div class="btn-group-vertical btn-group-toggle btn-block form-group" data-toggle="buttons">
+        {% if data[2]==1%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option1" value = "1"  autocomplete="off" checked> Strongly Disagree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option1" value = "1"  autocomplete="off" > Strongly Disagree
+            </label>
+            {% endif %}
+            {% if data[2]==2%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option2" value = "2"  autocomplete="off" checked> Disagree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option2" value = "2"  autocomplete="off" > Disagree
+            </label>
+            {% endif %}
+            {% if data[2]==3%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option3" value = "3"  autocomplete="off" checked> Somewhat Disagree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option3" value = "3"  autocomplete="off" > Somewhat Disagree
+            </label>
+            {% endif %}
+
+            {% if data[2]==4%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option4" value = "4"  autocomplete="off" checked> Don’t agree or disagree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option4" value = "4"  autocomplete="off" >Don’t agree or disagree
+            </label>
+            {% endif %}
+
+            {% if data[2]==5%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option5" value = "5"  autocomplete="off" checked>Agree Somewhat
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option5" value = "5"  autocomplete="off" > Agree Somewhat
+            </label>
+            {% endif %}
+
+            {% if data[2]==6%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option6" value = "6"  autocomplete="off" checked> Agree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option6" value = "6"  autocomplete="off" > Agree
+            </label>
+            {% endif %}
+
+            {% if data[2]==7%}
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options3" id="option7" value = "7"  autocomplete="off" checked> Strongly Agree
+            </label>
+            {% else: %}
+            <label class="btn btn-secondary ">
+                <input type="radio" name="options3" id="option7" value = "7"  autocomplete="off" > Strongly Agree
+            </label>
+            {% endif %}
+    </div>
+<p class="article-content">9. I'd rather say "No" directly, than risk being misunderstood.</p>
+<div class="btn-group-vertical btn-group-toggle btn-block form-group" data-toggle="buttons">
+    {% if data[3]==1%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option1" value = "1"  autocomplete="off" checked> Strongly Disagree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option1" value = "1"  autocomplete="off" > Strongly Disagree
+        </label>
+        {% endif %}
+        {% if data[3]==2%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option2" value = "2"  autocomplete="off" checked> Disagree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option2" value = "2"  autocomplete="off" > Disagree
+        </label>
+        {% endif %}
+        {% if data[3]==3%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option3" value = "3"  autocomplete="off" checked> Somewhat Disagree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option3" value = "3"  autocomplete="off" > Somewhat Disagree
+        </label>
+        {% endif %}
+
+        {% if data[3]==4%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option4" value = "4"  autocomplete="off" checked> Don’t agree or disagree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option4" value = "4"  autocomplete="off" >Don’t agree or disagree
+        </label>
+        {% endif %}
+
+        {% if data[3]==5%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option5" value = "5"  autocomplete="off" checked>Agree Somewhat
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option5" value = "5"  autocomplete="off" > Agree Somewhat
+        </label>
+        {% endif %}
+
+        {% if data[3]==6%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option6" value = "6"  autocomplete="off" checked> Agree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option6" value = "6"  autocomplete="off" > Agree
+        </label>
+        {% endif %}
+
+        {% if data[3]==7%}
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options4" id="option7" value = "7"  autocomplete="off" checked> Strongly Agree
+        </label>
+        {% else: %}
+        <label class="btn btn-secondary ">
+            <input type="radio" name="options4" id="option7" value = "7"  autocomplete="off" > Strongly Agree
+        </label>
+        {% endif %}
+</div>
+
+        <p class="article-content">10. Having a lively imagination is important to me.</p>
+        <div class="btn-group-vertical btn-group-toggle btn-block form-group" data-toggle="buttons">
+            {% if data[4]==1%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option1" value = "1"  autocomplete="off" checked> Strongly Disagree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option1" value = "1"  autocomplete="off" > Strongly Disagree
+                </label>
+                {% endif %}
+                {% if data[4]==2%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option2" value = "2"  autocomplete="off" checked> Disagree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option2" value = "2"  autocomplete="off" > Disagree
+                </label>
+                {% endif %}
+                {% if data[4]==3%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option3" value = "3"  autocomplete="off" checked> Somewhat Disagree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option3" value = "3"  autocomplete="off" > Somewhat Disagree
+                </label>
+                {% endif %}
+
+                {% if data[4]==4%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option4" value = "4"  autocomplete="off" checked> Don’t agree or disagree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option4" value = "4"  autocomplete="off" >Don’t agree or disagree
+                </label>
+                {% endif %}
+
+                {% if data[4]==5%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option5" value = "5"  autocomplete="off" checked>Agree Somewhat
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option5" value = "5"  autocomplete="off" > Agree Somewhat
+                </label>
+                {% endif %}
+
+                {% if data[4]==6%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option6" value = "6"  autocomplete="off" checked> Agree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option6" value = "6"  autocomplete="off" > Agree
+                </label>
+                {% endif %}
+
+                {% if data[4]==7%}
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options5" id="option7" value = "7"  autocomplete="off" checked> Strongly Agree
+                </label>
+                {% else: %}
+                <label class="btn btn-secondary ">
+                    <input type="radio" name="options5" id="option7" value = "7"  autocomplete="off" > Strongly Agree
+                </label>
+                {% endif %}
+        </div>
+        {% if done%}
+        <div class="fixed-top d-flex justify-content-center align-items-center " id='image'>                    <img class="img-responsive img-center"  src="static/Sun.jpg" alt="" height="300px" width="440px">
+        <input type="hidden" id = "check" value="1">
+    </div>
+        {%endif%}
+
+              <input type="submit" name="Previous" class="btn btn-primary btn-lg" href="{{ url_for('page10')}}"  value="Previous Page">  </input>
+              <input type="submit" name="Next" class="btn btn-primary btn-lg" href="{{ url_for('page10')}}" value="Next Page"></input>
+            </form>
+
+    <!-- <a  class="btn btn-primary btn-lg" href="{{ url_for('page9')}}">Previous Page</a> -->
+    <!-- <a  class="btn btn-primary btn-lg" href="{{ url_for('page4')}}">  Next Page  </a> -->
+    <!-- <input class="btn btn-primary btn-lg" type="submit" value="Previous Page" autocomplete="off"> -->
+    <!-- <input class="btn btn-primary btn-lg" type="submit" value="Next Page" autocomplete="off"> -->
+
+<!-- </form> -->
+<br>
+<button  class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Withdraw</button>
+    </div>
+
+    </article>
+
+
+    <script>
+
+        setTimeout(checkImage, 10000);
+    function checkImage()
+    {
+        if(document.getElementById('check'))
+        {
+        var image = $('#image');
+        image.removeClass('fixed-top');
+        image.removeClass(' d-flex');
+        image.addClass('d-none');
+        document.forms["myForm"].submit();
+        }
+
+    }
+    </script>
+{% endblock content %}

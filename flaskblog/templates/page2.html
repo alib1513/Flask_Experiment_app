@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class = "border-bottom mb-4">Consent Form</legend>
+                <div class="form-check">
+                    {{ form.consent1(class="form-check-input")}}
+                    {% if form.consent1.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent1.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent1.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent2(class="form-check-input")}}
+                    {% if form.consent2.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent2.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent2.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent3(class="form-check-input")}}
+                    {% if form.consent3.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent3.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent3.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent4(class="form-check-input")}}
+                    {% if form.consent4.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent4.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form. consent4.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent5(class="form-check-input")}}
+                    {% if form.consent5.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent5.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent5.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent6(class="form-check-input")}}
+                    {% if form. consent6.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent6.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent6.label(class="form-check-label")}}
+                </div>
+                <div class="form-check">
+                    {{ form.consent7(class="form-check-input")}}
+                    {% if form. consent7.errors %}
+                    
+                        <div class="invalid-feedback">
+                            {% for error in form.consent7.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% endif %}
+                    {{ form.consent7.label(class="form-check-label")}}
+                </div>
+                
+
+                <div class ="form-group">
+                    {{  form.initials.label(class="form-control-label") }}
+
+                    {% if form.initials.errors %}
+                        {{  form.initials(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.initials.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.initials(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+    
+            </fieldset>
+            <div class ="form-group">
+                <a  type="submit" class="btn btn-primary btn-lg" href="{{ url_for('page1')}}">Previous Page</a>
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}

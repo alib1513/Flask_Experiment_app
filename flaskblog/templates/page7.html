@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Trail Making Task- 3rd step</h2>
+      
+    <article class="media content-section">
+        <div class="media-body">
+            <h2>Instructions Page</h2>
+            <p class="article-content">Please watch the video below as it serves as an example for the task that you will be asked to do in a few moments.</p>
+            <div class="embed-responsive embed-responsive-16by9"> 
+                <video width="1000" height="500" controls>
+                <!-- <source src="flaskblog/static/Task1.avi" type="video/avi"> -->
+                    <source src="/static/Task2.mp4" type="video/mp4"></source>
+                </div>
+                <p class="article-content">Before starting the task, read the instructions below:
+
+                        Please click the appropiate circle as quickly as possible.
+                        If an error is made, the circle will turn red, please continue untill all the circles are green.
+                        Don't refresh the page, it will lose all data</p>
+                        <a  class="btn btn-primary btn-lg" href="{{ url_for('page6')}}">Previous Page</a>
+                        <a  class="btn btn-primary btn-lg" href="{{ url_for('page8')}}">  Next Page  </a>
+                        <br>
+                        <br>
+                        <button  class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Withdraw</button>
+                    </div>
+    </article>
+
+{% endblock content %}

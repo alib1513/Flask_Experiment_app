@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h2> Quality of life ranking scale</h2>
+      
+    <article class="media content-section" >
+        <div class="media-body" onload="myFunction1()">
+            <h5>Please choose a number on the vertical slider that you feel represents your quality of life. 1 being the worst/ poorest quality of life and 100 being the highest quality of life.</h5>
+            
+            <form action="{{url_for('page15')}}" method="POST"  class="text-center">
+                <div class="range-slider form-group " id="Slider" >
+                    <input class="input-range form-group" name="slider" orient="vertical" type="range" value = {{data}} step="1" min="1" max="100" style="-webkit-appearance: slider-vertical;width: 20px;height:400px">
+                    <br>
+                    <span class="range-value" id="demo">{{data}}</span>
+                </div> 
+
+                
+    <a  class="btn btn-primary btn-lg my-1" href="{{ url_for('page14')}}">Previous Page</a>
+    <!-- <a  class="btn btn-primary btn-lg" href="{{ url_for('page4')}}">  Next Page  </a> -->
+    <!-- <input class="btn btn-primary btn-lg" type="submit" value="Previous Page" autocomplete="off"> -->
+    <input class="btn btn-primary btn-lg my-1" type="submit" value="Next Page" autocomplete="off" >
+
+</form>
+
+<br>
+<br>
+<button  class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Withdraw</button>
+    </div>
+
+    </article>
+
+    {% endblock content %}
+

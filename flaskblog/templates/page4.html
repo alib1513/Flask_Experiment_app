@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class = "border-bottom mb-4">Consent Form</legend>
+                
+                <div class ="form-group">
+                    {{  form.gender.label(class="form-control-label") }}
+
+                    {% if form.gender.errors %}
+                        {{  form.gender(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.gender.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.gender(class="form-control form-control-lg") }}
+                    {% endif %}
+                
+                    </div>
+
+                <div class ="form-group">
+                    {{  form.age.label(class="form-control-label") }}
+
+                    {% if form.age.errors %}
+                        {{  form.age(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class ="form-group">
+                    {{  form.education.label(class="form-control-label") }}
+
+                    {% if form.education.errors %}
+                        {{  form.education(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.education.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.education(class="form-control form-control-lg") }}
+                    {% endif %}
+                
+                    </div>
+                    
+                <div class ="form-group">
+                    {{  form.country.label(class="form-control-label") }}
+
+                    {% if form.country.errors %}
+                        {{  form.country(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.country.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.country(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class ="form-group">
+                    {{  form.stay.label(class="form-control-label") }}
+
+                    {% if form.stay.errors %}
+                        {{  form.stay(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.stay.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.stay(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class ="form-group">
+                    {{  form.ethinicity.label(class="form-control-label") }}
+
+                    {% if form.ethinicity.errors %}
+                        {{  form.ethinicity(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.ethinicity.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.ethinicity(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class ="form-group">
+                    {{  form.job.label(class="form-control-label") }}
+
+                    {% if form.job.errors %}
+                        {{  form.job(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.job.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.job(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class ="form-group">
+                    {{  form.society.label(class="form-control-label") }}
+
+                    {% if form.society.errors %}
+                        {{  form.society(class="form-control form-control-label is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.society.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {{  form.society(class="form-control form-control-lg") }}
+                    {% endif %}
+                
+                    </div>
+
+            </fieldset>
+            <div class ="form-group">
+                <a  type="submit" class="btn btn-primary btn-lg" href="{{ url_for('page3')}}">Previous Page</a>
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+
+        </form>
+        <br>
+        <button  class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Withdraw</button>
+    </div>
+{% endblock content %}

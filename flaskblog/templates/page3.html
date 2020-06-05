@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+      
+    <article class="media content-section">
+        <div class="media-body">
+            <h2>Instructions Page</h2>
+            <p class="article-content">If you wish to continue with the study, please carefully read the information below.
+
+            Firstly, if you would like a guide or assistance through the study, please contact the researcher.
+            The researcher is available over email, feel free to make any inquiries about the study or your performance:
+            Email:  r.jaya@my.bpp.com 
+            
+            The study will take a minimum of 30 minutes. Please read all instructions carefully before starting.
+            
+            Before clicking to start the study, please follow the instructions below:
+            1. After clicking start, at every five minutes interval throughout the whole study press f on the keyboard. Please do not use an aid or write this instruction down.
+            
+            2. A doctor will pop up on the screen asking you what you need. Please inform him that you require some medication. Please do not write this down or utilize an aid as this is a memory test.
+            Again, please do not use an aid or write this instruction down.
+            
+            When you are ready, please click the button below to start:</p>
+            <a  class="btn btn-primary btn-lg" href="{{ url_for('page2')}}">Previous Page</a>
+            <a  class="btn btn-primary btn-lg" href="{{ url_for('page4')}}">  Next Page  </a>
+                </div>
+    </article>
+
+{% endblock content %}

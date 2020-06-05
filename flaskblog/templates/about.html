@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>About Page</h1>
+    {% if title %}
+    <h1>{{ title }}</h1>
+    {% else %}
+    <h1>Psychological Experiment</h1>
+    {% endif %}
+
+{% endblock content %}

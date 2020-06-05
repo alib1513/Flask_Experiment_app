@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href = "{{ url_for('static', filename = 'main.css') }}">
+
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Psychological Experiment</title>
+    {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <h1 class="navbar-brand mr-4 text-center">Psychological experiment</h1>
+        
+      </div>
+    </nav>
+  </header>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+
+             <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to Withdraw from the experiment?
+            </div>
+            <div class="modal-footer">
+              <a type="button" class="btn btn-secondary" href="{{url_for('withdraw')}}">Yes</a>
+              <a type="button" class="btn btn-primary" data-dismiss="modal" href="#">No</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="keyboardModal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="keyboardModalLabel">Select a Key</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <button type="button" class="btn btn-primary " >A</button>
+              <button type="button" class="btn btn-primary " onclick="insertKey('B')">B</button>
+              <button type="button" class="btn btn-primary " >D</button>
+              <button type="button" class="btn btn-primary " onclick="insertKey('F')">F</button>
+              <button type="button" class="btn btn-primary " onclick="insertKey('G')">G</button>
+              <button type="button" class="btn btn-primary ">H</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+      </div>
+      
+      <div class="col-md-4" id="SideBar">
+        <div class="content-section">
+          <h3>Time</h3>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light" id="Total-Time">Total Time: </li>
+              <li class="list-group-item list-group-item-light" id='Trail-1-Time'>Trail Task Time:</li>
+              <li class="list-group-item list-group-item-light" id='Trail-2-Time'>Trail Task Time:</li>
+              <li class="list-group-item list-group-item-light" id='Keyboard'><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#keyboardModal">Keyboard</button></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function myFunction1(){
+        var range = $('.input-range'),
+    value = $('.range-value');
+    
+value.html(range.attr('value'));
+
+range.on('input', function(){
+    value.html(this.value);
+    
+}); 
+
+    
+    };
+    setTimeout(function(){
+   
+ 
+   myFunction1();
+ }, 10);
+     
+</script>
+
+
+    <script>
+      var ttime = document.getElementById("ttime")
+
+      var timer1 = false;
+      function timer1ON()
+      {
+        timer1 =true;
+      }
+      var timer2 = false;
+      function timer2ON()
+      {
+        timer2 =true;
+      }
+      //1591304143487
+      //1591303770
+      //1591304215
+      var c0 = 0;
+      var t1 = 0;
+      var t2 = 0;
+    
+    var date = new Date(0);
+    var temptime = new Date();
+      setTimeout(function(){
+        if (document.getElementById("Slider"))
+        {
+          //myFunction1()
+        }
+        if (is_touch_device()==false)
+          {$('#Keyboard').addClass('d-none');
+          }
+        if('{{times[0]}}'!="-1")
+        {
+          if(sessionStorage.getItem("keys"))
+        {
+          let keys = JSON.parse( sessionStorage.keys );
+          keyPresses = keys
+        }
+          this.c0 = parseInt(temptime.getTime()/1000)- parseInt('{{times[0]}}');
+        
+          document.getElementById("Trail-1-Time").innerHTML = 'Trail 1 Time: '+'{{times[1]}}';          
+          document.getElementById("Trail-2-Time").innerHTML = 'Trail 2 Time: '+'{{times[2]}}';
+          totalTimer = setInterval(totalCounter, 1000);
+          totalCounter();
+          } 
+        else{
+          //$('#SideBar').addClass('d-none');
+        }
+}, 10);
+
+function convertHMS(value) {
+  const sec = parseInt(value, 10); // convert value to number if it's string
+    let hours   = Math.floor(sec / 3600); // get hours
+    let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+    let seconds = sec - (hours * 3600) - (minutes * 60); //  get seconds
+    // add 0 if value < 10
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+
+  
+
+}
+function totalCounter() {
+
+  this.c0++;
+  timecounter = convertHMS(this.c0);
+          
+    document.getElementById("Total-Time").innerHTML = 'Total Time: '+ timecounter;
+    
+}
+
+  </script>
+
+
+
+<script>
+function is_touch_device() {  
+  try {  
+    document.createEvent("TouchEvent");  
+    return true;  
+  } catch (e) {  
+    return false;  
+  }  
+}
+
+
+
+
+    var keyPresses = {"KeyG":"0",'KeyB':"0","KeyF":[]};
+   
+   
+    function submitKeys(){
+if (localStorage)
+    httpRequest = new XMLHttpRequest();
+
+if (!httpRequest) {
+  alert('Giving up :( Cannot create an XMLHTTP instance');
+  return false;
+}
+httpRequest.open('POST', 'Page-18');
+var data = JSON.stringify(keyPresses);
+httpRequest.send(data);
+return false
+};
+
+
+  function pushbtn(event) {
+
+  var keycode = event.keyCode,
+    key = String.fromCharCode(keycode),
+
+    // finding the element on which the event
+    // was originally fired:
+    source = event.target,
+
+    // an Array of element-types upon which
+    // the function should not fire (to prevent
+    // interfering needlessly with the UI and
+    // user-expectations):
+    exclude = ['input', 'textarea'];
+
+  // finding the element-type (tagName) of the element
+  // upon which the event was fired, converting it to
+  // a lower-case string and then looking in the Array
+  // of excluded elements to see if the element is held
+  // within (-1 indicates the string was not found within
+  // the Array):
+  //localStorage.setItem("key", "value");
+  if (exclude.indexOf(source.tagName.toLowerCase()) === -1) {
+    console.log('You pressed ' + key + ' (keyCode: ' + keycode + ').');
+  }
+
+  insertKey(key)
+  return;
+}
+function insertKey(key)
+{
+  if (key == "B" || key == "b")
+{
+  keyPresses.KeyB = '1'
+  sessionStorage.keys = JSON.stringify(keyPresses);// sometime later
+
+}
+if (key == "G" || key == "g")
+{
+  keyPresses.KeyG = '1'
+  sessionStorage.keys = JSON.stringify(keyPresses);// sometime later
+}
+if (key == "F" || key == "f")
+{
+  keyPresses.KeyF[keyPresses.KeyF.length]= c0.toString(10)
+  sessionStorage.keys = JSON.stringify(keyPresses);// sometime later
+
+  alert( JSON.parse(sessionStorage.keys).KeyF ); // Batman
+
+}
+
+}
+document.addEventListener('keypress', pushbtn);
+</script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

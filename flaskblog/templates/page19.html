@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Last Page</h2>
+      
+    <article class="media content-section">
+        <div class="media-body">
+        <p class="article-content">Dear Participant,
+            
+            Thank you for participating in our study that aims to examine whether culture and age influence memory. The results from this study might help people in the future, who are more at risk of developing memory problems.
+            
+            If you know of any friends or acquaintances that are eligible to participate in this study, we request that you do not discuss the content of the study until they have participated in it. Prior knowledge of the study can invalidate the results. Your cooperation is greatly appreciated.All information that is collected during the study will be kept confidential at all times and in compliance with the Data Protection Act 2018. If there is a possibility of participant information being disclosed to others it will because the participant states their intentions to harm themselves or others. All information will also be anonymised and participant identity will remain private.
+             
+            In the event that you are concerned about your memory, we would encourage you to make an appointment with your doctor. If you would like to find out more about memory and ageing then you can find out more information here: <br> https://www.apa.org/pi/aging/memory-and-aging.pdf. 
+                
+            If you agree to take part in the study, then you will need to type your initials and check the boxes in the consent form on the next screen.</p>
+        
+            If you are concerned about any aspect of the study, please contact Dr Sara Balouch ( Email: sarabalouch@bpp.com ) 
+
+            Thank you again for your participation.
+        </div>
+    </article>
+    <a  class="btn btn-primary btn-lg" href="{{ url_for('page1')}}">  Next Page  </a>
+
+{% endblock content %}
